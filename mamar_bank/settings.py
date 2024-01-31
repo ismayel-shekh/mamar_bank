@@ -11,6 +11,21 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+# Don't forget to import dj-database-url at the beginning of the file
+import dj_database_url
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+import environ
+env = environ.Env()
+environ.Env.read_env()
+# Your secret key
+SECRET_KEY = env("SECRET_KEY")
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgres://mamarbank_ccdb_user:4tJLWhwNFQ4cCb1vMFCQDMyWLEE4qu2O@dpg-cmt37hgcmk4c738jo2a0-a.oregon-postgres.render.com/mamarbank_ccdb',
+    )
+}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,21 +109,17 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #        'PORT': '5432',
 #    }
 # }
-import environ
-env = environ.Env()
-environ.Env.read_env()
-# Your secret key
-SECRET_KEY = env("SECRET_KEY")
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT"),
-    }
-}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env("DB_NAME"),
+#         'USER': env("DB_USER"),
+#         'PASSWORD': env("DB_PASSWORD"),
+#         'HOST': env("DB_HOST"),
+#         'PORT': env("DB_PORT"),
+#     }
+# }
 
 
 # Password validation
