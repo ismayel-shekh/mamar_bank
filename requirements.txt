@@ -1,42 +1,18 @@
-# asgiref
-# certifi
-# cloudinary
-# crispy-bootstrap5
-# distlib
-# dj-database-url
-# Django
-# django-crispy-forms
-# django-environ
-# filelock
-# Pillow
-# pip-chill
-# pipenv
-# platformdirs
-# protobuf
-# psycopg2-binary
-# setuptools
-# six
-# sqlparse
-# typing_extensions
-# tzdata
-# urllib3
-# virtualenv
-
 argcomplete
 asgiref
 Babel
 bcrypt
 blinker
-
+Brlapi
 certifi
 cffi
 chardet
 click
 colorama
-
+command-not-found
 crispy-bootstrap5
 cryptography
-
+cupshelpers
 dbus-python
 defer
 distlib
