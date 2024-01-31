@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
-import environ
-env = environ.Env()
-environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -97,7 +94,13 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #        'PORT': '5432',
 #    }
 # }
-
+from pathlib import Path
+import dj_database_url
+import environ
+env = environ.Env()
+environ.Env.read_env()
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 # Your secret key
 # SECRET_KEY = env("SECRET_KEY")
 # DATABASES = {
@@ -110,17 +113,13 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #         'PORT': env("DB_PORT"),
 #     }
 # }
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://mamarbank_fgip_user:S1RsdZcOPBD0rAeQayMHevBgCCYZbNNJ@dpg-cmssm4en7f5s73ai2b1g-a.oregon-postgres.render.com/mamarbank_fgip',
+        default='postgres://mamarbank_tw7v_user:j252DkVmhx79NEtdReU2pUG1MlBftYJn@dpg-cmt226i1hbls73cmnrdg-a.oregon-postgres.render.com/mamarbank_tw7v',
 
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
